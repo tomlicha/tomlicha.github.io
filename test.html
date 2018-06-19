@@ -6,6 +6,7 @@
 
         <button type="submit" onclick="UserAction()">Search</button>
 <script>
+var csv
         function UserAction(){
 $.ajax({
         url: 'https://84.7.38.34:443/collections/aze',
@@ -13,7 +14,7 @@ $.ajax({
             //process the JSON data etc
             console.log(data[1]["date"]);
             alert((data[1]["date"]));
-            var csv = ConvertToCSV(data,["date","temperature","humidité\n"])
+            csv = ConvertToCSV(data,["date","temperature","humidité","id\n"])
             console.log(csv);
         }
 })
@@ -38,7 +39,61 @@ function ConvertToCSV(objArray,headers) {
         return str;
 
     }
+
+var afficherGraphe = function(csvfile, options, id_graphe) {
+
+g = new Dygraph(
+
+   // containing div
+   document.getElementById(id_graphe),
+
+   // CSV or path to a CSV file.
+   csvfile,
+
+   //Options
+   options
+ );
+};
+
+var options =     {  
+          animatedZooms :true,
+          title : 'Température et Humidité ambiante',
+          titleHeight : 30,
+          labelsGMT: true, 
+          ylabel : "valeur mesurée (°C et %)",
+          y2label:"seuils d'alerte",
+          labelsSeparateLines :true,
+          xlabel : "date de la mesure",
+          legend:'follow',
+          fillGraph: true,
+          fillAlpha: 0.5,
+          labelsDivStyles: {'textAlign': 'left'},
+          colors : ['#86BBEE','#5FBA7D','#FF0000','#FF0000'],
+           "series": {
+
+              "alerte humidité": {
+                "fillAlpha":0
+              },
+              "alerte température": {
+                "fillAlpha":0
+              },
+              "Humidité %": {
+               "connectSeparatedPoints":true
+              },
+              "Température °C": {
+               "connectSeparatedPoints":true
+              },
+            },
+            
+                       
+     };
+
+afficherGraphe(csv, options,"graph");
+
+
 </script>
+
+<div id="graph" style="height:320px; margin-top: 10px;"></div>
 </body>
 
 </HTML>

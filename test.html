@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<title>Tom Licha</title>
+<body> erghuerhg
+
+        <button type="submit" onclick="UserAction()">Search</button>
+<script>
+$.ajax({
+        url: 'http://84.7.38.34:80/collections/aze',
+         success: function(data){
+            alert(data);
+            //process the JSON data etc
+            console.log(data);
+        }
+})
+
+</script>
+</body>
+
+</HTML>

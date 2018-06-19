@@ -17,6 +17,8 @@ $.ajax({
             alert((data[1]["date"]));
             csv = ConvertToCSV(data,["date","temperature","humidité","id\n"])
             console.log(csv);
+            
+        afficherGraphe(csv, options,"graph");
         }
 })
 }
@@ -89,7 +91,6 @@ var options =     {
                        
      };
 
-afficherGraphe(csv, options,"graph");
 
 
 </script>

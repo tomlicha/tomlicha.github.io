@@ -13,9 +13,31 @@ $.ajax({
             //process the JSON data etc
             console.log(data[1]["date"]);
             alert((data[1]["date"]));
+            var csv = ConvertToCSV(data,["date","temperature","humidité\n"])
+            console.log(csv);
         }
 })
 }
+
+function ConvertToCSV(objArray,headers) {
+        var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+        var str = '';
+        
+        str+=headers;
+        for (var i = 0; i < array.length; i++) {
+            var line = '';
+            for (var index in array[i]) {
+                if (line != '') line += ','
+                        line += array[i][index];
+              
+            }
+
+            str += line + '\r\n';
+        }
+
+        return str;
+
+    }
 </script>
 </body>
 

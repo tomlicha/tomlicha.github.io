@@ -6,6 +6,7 @@
 
         <button type="submit" onclick="UserAction()">Search</button>
 <script>
+        function UserAction(){
 $.ajax({
         url: 'http://84.7.38.34:80/collections/aze',
          success: function(data){
@@ -14,7 +15,7 @@ $.ajax({
             console.log(data);
         }
 })
-
+}
 </script>
 </body>
 

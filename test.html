@@ -2,8 +2,38 @@
 <meta charset="utf-8">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <title>Tom Licha</title>
-<body> erghuerhg
+<body> 
+                <div class="container-fluid">
+
+                                <header class="row">
+                          
+                             
+                          
+                          <nav class="navbar navbar-default navbar-fixed-top ">
+                          
+                          
+                          
+                              <!-- Brand and toggle get grouped for better mobile display -->
+                              <div class="navbar-header">
+   
+                                </a>
+                              
+                              </div>
+                          
+                              <i class="fa fa-bars  toggle-btn navbar-toggle" id="toggle-top" data-toggle="collapse" data-target="#top-menu-content,#nav_bar_top-right" aria-expanded="flase"></i>
+                          
+                              <!-- Collect the nav links, forms, and other content for toggling -->
+                              <div class="menu-list" id="nav_bar_top">
+                          
+                                <ul id="top-menu-content" class="menu-content nav navbar-nav in">
+                            
+                                </ul>
+
+                          
+                              </div><!-- /.navbar-collapse -->
+                            </nav></header></div>
 
         <button type="submit" onclick="UserAction()">Search</button>
 <script>
@@ -70,7 +100,7 @@ var options =     {
           legend:'follow',
           fillGraph: true,
           fillAlpha: 0.5,
-          labelsDivStyles: {'textAlign': 'left'},
+          labelsDivStyles: {'textAlign': 'right'},
           colors : ['#86BBEE','#5FBA7D','#FF0000','#FF0000'],
            "series": {
 
@@ -94,8 +124,10 @@ var options =     {
 
 
 </script>
+<div class="container-fluid">
+        <div id="graph" style="height:320px; margin-top: 10px;"></div>
+      </div>
 
-<div id="graph" style="height:320px; margin-top: 10px;"></div>
 </body>
 
 </HTML>

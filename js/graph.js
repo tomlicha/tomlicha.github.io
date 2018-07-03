@@ -62,22 +62,22 @@ var options =     {
           legend:'follow',
           fillGraph: true,
           fillAlpha: 0.5,
-          labelsDivStyles: {'textAlign': 'right'},
-          colors : ['#86BBEE','#5FBA7D','#FF0000','#FF0000'],
+          labelsDivStyles: {'textAlign': 'left'},
+          colors : ['#86BBEE','#5FBA7D','#FF0000'],
            "series": {
 
-              "alerte humidité": {
-                "fillAlpha":0
-              },
-              "alerte température": {
-                "fillAlpha":0
-              },
-              "Humidité %": {
-               "connectSeparatedPoints":true
-              },
-              "Température °C": {
-               "connectSeparatedPoints":true
-              },
+            "Température °C": {
+                "connectSeparatedPoints":true
+               },
+
+            "Humidité %": {
+            "connectSeparatedPoints":true
+            },
+
+            "id": {
+                "connectSeparatedPoints":true
+               },
+              
             },
             
                        

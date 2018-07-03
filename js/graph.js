@@ -62,7 +62,23 @@ var options =     {
           legend:'follow',
           fillGraph: true,
           fillAlpha: 0.5,
-          
+          labelsDivStyles: {'textAlign': 'left'},
+          colors : ['#86BBEE','#5FBA7D','#FF0000'],
+           "series": {
+
+            "Température °C": {
+                "connectSeparatedPoints":true
+               },
+
+            "Humidité %": {
+            "connectSeparatedPoints":true
+            },
+
+            "id": {
+                "connectSeparatedPoints":true
+               },
+              
+            },
             
                        
      };

@@ -18,20 +18,24 @@
 
 	<!-- CSS
     ================================================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.0.0/dygraph.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
- 
+
    <link rel="stylesheet" href="css/default.css">
    <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/graphes.css">
    <link rel="stylesheet" href="css/magnific-popup.css">
    <link rel="stylesheet" href="css/media-queries.css">
    
    <!-- Script
    ================================================== -->
-	<script src="js/modernizr.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/graph.js"></script>
 
    <!-- Favicons
 	================================================== -->
@@ -86,7 +90,9 @@
       
 
    </header> <!-- Header End -->
-
+   <div id="dialog" title="Basic dialog" style="visibility: hidden">
+    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  </div>
 
    <!-- About Section
    ================================================== -->
@@ -266,7 +272,7 @@
             <h1><span>Projets réalisés</span></h1>
          </div>
 
-         <div class="nine columns main-col">
+         <div class="container-fluid">
 
             <div class="row item">
 
@@ -361,7 +367,11 @@
     </div>
   </div>
 </div>
+<div class="container-fluid">
+  <div id="graph" style="height:320px; margin-top: 100px;"></div>
+</div>
 
+<button type="submit" onclick="UserAction()" style="margin-top:100px">Search</button>
 <script>
 function openModal() {
   document.getElementById('myModal').style.display = "block";
@@ -529,8 +539,8 @@ function showSlides(n) {
 					   <h4>Adresse et téléphone</h4>
 					   <p class="address">
 						   Tom Licha<br>
-						   24 rue Pierre Loti<br>
-						   Brest, FR<br>
+						   25 avenue de la plaine fleurie<br>
+						   38240 Meylan, FR<br>
 						   <span>+33 7 70 31 25 44</span>
 					   </p>
 
@@ -569,7 +579,7 @@ function showSlides(n) {
 
    <!-- Java Script
    ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
@@ -585,7 +595,7 @@ function showSlides(n) {
 </html>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 <script>
 $("#mailbutton").click(function() {

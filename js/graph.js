@@ -58,7 +58,11 @@ var options =     {
           ylabel : "valeur mesurée (°C et %)",
           y2label:"seuils d'alerte",
           labelsSeparateLines :true,
-
+          xlabel : "date de la mesure",
+          legend:'follow',
+          fillGraph: true,
+          fillAlpha: 0.5,
+          
             
                        
      };

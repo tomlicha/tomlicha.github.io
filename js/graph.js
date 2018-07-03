@@ -2,7 +2,7 @@
 var csv
         function UserAction(){
 $.ajax({
-        url: 'https://84.7.38.34:443/collections/aze',
+        url: 'https://84.7.38.34:443/collections/humiditysensor',
          success: function(data){
             //process the JSON data etc
             console.log(data[1]["date"]);
@@ -11,7 +11,10 @@ $.ajax({
             console.log(csv);
             
         afficherGraphe(csv, options,"graph");
-        }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+        }   
 })
 }
 

@@ -58,27 +58,7 @@ var options =     {
           ylabel : "valeur mesurée (°C et %)",
           y2label:"seuils d'alerte",
           labelsSeparateLines :true,
-          xlabel : "date de la mesure",
-          legend:'follow',
-          fillGraph: true,
-          fillAlpha: 0.5,
-          labelsDivStyles: {'textAlign': 'left'},
-          colors : ['#86BBEE','#5FBA7D','#FF0000'],
-           "series": {
 
-            "Température °C": {
-                "connectSeparatedPoints":true
-               },
-
-            "Humidité %": {
-            "connectSeparatedPoints":true
-            },
-
-            "id": {
-                "connectSeparatedPoints":true
-               },
-              
-            },
             
                        
      };

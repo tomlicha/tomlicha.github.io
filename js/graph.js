@@ -6,13 +6,13 @@ $.ajax({
          success: function(data){
             //process the JSON data etc
             console.log(data[1]["date"]);
-            alert((data[1]["date"]));
             csv = ConvertToCSV(data,["date","temperature","humidité","id\n"])
             console.log(csv);
             
         afficherGraphe(csv, options,"graph");
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            document.getElementById(dialog).style.visibility= visible;
             alert("Error: please visit https://84.7.38.34:443/collections/humiditysensor to get the SSL certificate then try again" + errorThrown); 
         }   
 })

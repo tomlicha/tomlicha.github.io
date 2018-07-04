@@ -5,14 +5,13 @@ $.ajax({
         url: 'https://84.7.38.34:443/collections/humiditysensor',
          success: function(data){
             //process the JSON data etc
-            console.log(data[1]["date"]);
             csv = ConvertToCSV(data,["date","temperature","humidité","id\n"])
             console.log(csv);
             
         afficherGraphe(csv, options,"graph");
         },
         error : function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status + "please visit https://84.7.38.34:443collections/humiditysensor to get the SSL certificate and then try again");
+            alert("please visit https://84.7.38.34:443/collections/humiditysensor to get the SSL certificate and then try again");
 
         }
         

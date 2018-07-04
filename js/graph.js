@@ -10,6 +10,10 @@ $.ajax({
             console.log(csv);
             
         afficherGraphe(csv, options,"graph");
+        },
+        error : function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status + "please visit https://84.7.38.34:443collections/humiditysensor to get the SSL certificate and then try again");
+
         }
         
 })

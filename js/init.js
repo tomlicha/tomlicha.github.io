@@ -151,7 +151,7 @@
     $('#contactForm').attr('action',
                'mailto:tomylicha@hotmail.fr?subject=' +
                contactSubject + '&body=' +contactMessage);
-
+   });
 
 
 });

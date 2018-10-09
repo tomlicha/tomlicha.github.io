@@ -148,9 +148,9 @@
 
      
 
-    $('#contactForm').attr('action',
+  /* $('#contactForm').attr('action',
                'mailto:tomylicha@hotmail.fr?subject=' +
-               contactSubject + '&body=' +contactMessage);
+               contactSubject + '&body=' +contactMessage);*/
    });
 
 

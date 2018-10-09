@@ -508,7 +508,7 @@ function showSlides(n) {
 
    <!-- Contact Section
    ================================================== -->
-   <!--
+   
    <section id="contact">
 
          <div class="row section-head">
@@ -596,7 +596,7 @@ function showSlides(n) {
 
       </div>
 
-   </section> --><!-- Contact Section End-->
+   </section> <!-- Contact Section End-->
 
 
    <!-- footer
@@ -642,36 +642,4 @@ function showSlides(n) {
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<script>
-$("#mailbutton").click(function() {
-   $.ajax({
-      type: "POST",
-      url: "https://mandrillapp.com/api/1.0/messages/send.json",
-      data: {
-      'key': 'IqO53EPRJC66QMGdaNRo_A',
-      'message': {
-      'from_email': document.getElementById("email").value,
-      'from_name': document.getElementById("nom").value,
-      'to': [
-          {
-            'email': 't4licha@enib.fr',
-            'name': 'Tom Licha',
-            'type': 'to'
-          }
-        ],
-      'autotext': 'true',
-      'subject': document.getElementById("objet").value,
-      'html': document.getElementById("message").value
-    }
-  }
- }).done(function(response) {
-   console.log(response); // if you're into that sorta thing
-});
-setTimeout(function(){
-   document.getElementById("confirmation").style.display="block";
-   document.getElementById("contactForm").reset();
 
-}, 1000);
-
-});
-</script>

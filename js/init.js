@@ -137,22 +137,7 @@
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
-
-      $('#image-loader').fadeIn();
-
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val()+"\nemail\n"+contactEmail+"\n+name:\n"+contactName;
-
-     
-
-  /* $('#contactForm').attr('action',
-               'mailto:tomylicha@hotmail.fr?subject=' +
-               contactSubject + '&body=' +contactMessage);*/
-   });
-
+   
 
 });
 

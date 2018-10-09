@@ -584,36 +584,67 @@ function showSlides(n) {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 
-<script>
-    $("#mailbutton").click(function() {
-       $.ajax({
-          type: "POST",
-          url: "https://mandrillapp.com/api/1.0/messages/send.json",
-          data: {
-          'key': '2bb2a2f4a66531b7bcbbfb8d935abbb2-us19',
-          'message': {
-          'from_email': document.getElementById("email").value,
-          'from_name': document.getElementById("nom").value,
-          'to': [
+    <script>
+        $(function()
+        {
+            function after_form_submitted(data)
+            {
+                if(data.result == 'success')
+                {
+                    $('form#reused_form').hide();
+                    $('#success_message').show();
+                    $('#error_message').hide();
+                }
+                else
+                {
+                    $('#error_message').append('<ul></ul>');
+        
+                    jQuery.each(data.errors,function(key,val)
+                    {
+                        $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+                    });
+                    $('#success_message').hide();
+                    $('#error_message').show();
+        
+                    //reverse the response on the button
+                    $('button[type="button"]', $form).each(function()
+                    {
+                        $btn = $(this);
+                        label = $btn.prop('orig_label');
+                        if(label)
+                        {
+                            $btn.prop('type','submit' );
+                            $btn.text(label);
+                            $btn.prop('orig_label','');
+                        }
+                    });
+        
+                }//else
+            }
+        
+          $('#reused_form').submit(function(e)
               {
-                'email': 't4licha@enib.fr',
-                'name': 'Tom Licha',
-                'type': 'to'
-              }
-            ],
-          'autotext': 'true',
-          'subject': document.getElementById("objet").value,
-          'html': document.getElementById("message").value
-        }
-      }
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-    });
-    setTimeout(function(){
-       document.getElementById("confirmation").style.display="block";
-       document.getElementById("contactForm").reset();
-    
-    }, 1000);
-    
-    });
-    </script>
+                e.preventDefault();
+        
+                $form = $(this);
+                //show some response on the button
+                $('button[type="submit"]', $form).each(function()
+                {
+                    $btn = $(this);
+                    $btn.prop('type','button' );
+                    $btn.prop('orig_label',$btn.text());
+                    $btn.text('Sending ...');
+                });
+        
+        
+                            $.ajax({
+                        type: "POST",
+                        url: 'handler.php',
+                        data: $form.serialize(),
+                        success: after_form_submitted,
+                        dataType: 'json'
+                    });
+        
+              });
+        });
+        </script>

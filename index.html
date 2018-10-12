@@ -604,8 +604,8 @@ function showSlides(n) {
         
                 var link = "mailto:t4licha@enib.fr"
 
-             + "?subject=" +document.getElementById("reused_form").elements["subject"]
-             + "&body=" + document.getElementById("reused_form").elements["Message"]
+             + "?subject=" +document.getElementById("reused_form").elements["subject"].value
+             + "&body=" + document.getElementById("reused_form").elements["Message"].value
     ;
 
     window.location.href = link;

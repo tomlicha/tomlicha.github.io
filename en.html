@@ -551,7 +551,7 @@ function showSlides(n) {
          
          
          
-               <button class="button-primary" type="submit" >Post</button>
+               <button class="button-primary" type="submit" >Send message</button>
            </form>      
 
        </div>
@@ -644,6 +644,10 @@ function showSlides(n) {
 
 window.location.href = link;
 
+$btn.prop('type','button' );
+$btn.prop('orig_label',$btn.text());
+$btn.text('Sent');
+     
       });
 
 </script>

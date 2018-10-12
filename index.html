@@ -496,7 +496,8 @@ function showSlides(n) {
               
               
               
-                    <input class="button-primary" type="submit" value="Envoyer">
+              
+                    <button class="button-primary" type="submit" >Post</button>
                 </form>
                 <div  id="success_message" style="display:none">
                     <h3>Submitted the form successfully!</h3>
@@ -581,3 +582,31 @@ function showSlides(n) {
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+    <script>
+          $('#reused_form').submit(function(e)
+              {
+                e.preventDefault();
+        
+                $form = $(this);
+                //show some response on the button
+                $('button[type="submit"]', $form).each(function()
+                {
+                    $btn = $(this);
+                    $btn.prop('type','button' );
+                    $btn.prop('orig_label',$btn.text());
+                    $btn.text('Sending ...');
+                });
+        
+                var link = from[0]
+             
+             + "&subject=" + form[1]
+             + "&body=" + escape(document.getElementById('myText').value)
+    ;
+
+    window.location.href = link;
+        
+              });
+    
+        </script>

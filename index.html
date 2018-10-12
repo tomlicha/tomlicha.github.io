@@ -484,12 +484,15 @@ function showSlides(n) {
             <div class="eight columns">
 
                
-                <form action="mailto:t4licha@enib.fr" method="post" enctype="text/plain" id="reused_form" >
+                <form  enctype="text/plain" id="reused_form" >
                     <label for="name">Your Name:</label>
                     <input id="name" type="text" name="Name" required maxlength="50">
               
                     <label for="email">Email Address:</label>
                     <input id="email" type="email" name="Email" required maxlength="50">
+
+                    <label for="name">Subject:</label>
+                    <input id="subject" type="text" name="subject" required maxlength="100">
               
                     <label for="message">Message:</label>
                     <textarea id="message" name="Message" rows="10" maxlength="6000" required></textarea>
@@ -599,10 +602,10 @@ function showSlides(n) {
                     $btn.text('Sending ...');
                 });
         
-                var link = form[0]
-             
-             + "&subject=" + form[1]
-             + "&body=" + escape(document.getElementById('myText').value)
+                var link = "mailto:t4licha@enib.fr"
+
+             + "&subject=" +document.getElementById("reused_form").elements["subject"]
+             + "&body=" + document.getElementById("reused_form").elements["Message"]
     ;
 
     window.location.href = link;
